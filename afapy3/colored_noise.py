@@ -101,7 +101,7 @@ for i, xy in enumerate(XY):
                     width="25%",
                     height=.75,
                     loc=loc)
-    n, bins, patches = plt.hist(fWn, 25, normed=1, edgecolor = 'w', facecolor = 'k')
+    n, bins, patches = plt.hist(fWn, 25, density=True, edgecolor = 'w', facecolor = 'k')
     plt.xticks([])
     plt.yticks([])
 
@@ -118,6 +118,6 @@ for i, xy in enumerate(XY):
     [i.set_linewidth(2.25) for i in ax[i,1].spines.values()]# border
     ax[i,1].tick_params(axis='both', which='both', labelsize = 15)
 
-#plt.tight_layout()
+plt.tight_layout()
 plt.savefig('colored_noise.png')
 plt.close()
